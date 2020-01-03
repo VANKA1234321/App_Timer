@@ -1,0 +1,47 @@
+page-manual {
+
+h1 { 
+    display: block;
+    font-size: 2em;   
+    font-weight: bold;
+    color: dodgerblue;
+}
+
+.swiperFont {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    color: lightgray;
+}
+
+.swiperFontSelected {
+    display: block;
+    font-size: 5em;
+    font-weight: bold;
+    color: dodgerblue;
+}
+
+.slider-slide {
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+}
+
+ion-label {
+    color: black !important;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper h1 {
+  //background-color: black;
+  bottom: 20%;
+  color: white;  
+  font-size: 3em;
+  left: 0;
+  padding: 0.25em 0.75em;
+  position: absolute;
+}
+
+}

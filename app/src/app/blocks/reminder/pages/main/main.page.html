@@ -1,0 +1,172 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>{{timerModel}}, Zone{{zoneId}}</ion-title>
+	</ion-navbar>
+	<ion-toolbar no-border-top transparent>
+		<ion-row>
+			<button ion-button full icon-only color="{{cycleBtnColor}}" (click)="functionBtnClicked(1)">
+				<ion-icon name="md-sync"></ion-icon>CYCLE</button>
+			<button ion-button full icon-only color="{{weeklyBtnColor}}" (click)="functionBtnClicked(2)">
+				<ion-icon name="md-calendar"></ion-icon>WEEKLY</button>
+		</ion-row>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-image: url('assets/img/backgroundimage.jpg');background-size: cover;">
+	<div [ngSwitch]="function">
+		<div *ngSwitchCase="'cycle'">
+			<ion-list>
+				<ion-item>
+					<ion-label>Start Time</ion-label>
+					<ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>Water For</ion-label>
+					<ion-select [(ngModel)]="waterForSelected">
+						<ion-option *ngFor="let waterFor of waterForList">{{waterFor.item}}</ion-option>
+					</ion-select>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>Water Every</ion-label>
+					<ion-select [(ngModel)]="waterEverySelected">
+						<ion-option *ngFor="let waterFor of watereEeryList">{{waterFor.item}}</ion-option>
+					</ion-select>
+				</ion-item>
+				<div *ngIf="ecoFunction">
+					<ion-item>
+						<ion-label>ECO Function</ion-label>
+						<ion-toggle [(ngModel)]="ecoIsEnable" checked="false"></ion-toggle>
+					</ion-item>
+					<ion-item>
+						<ion-label>ECO Water For</ion-label>
+						<ion-select [(ngModel)]="ecoWaterForSelected">
+							<ion-option *ngFor="let ecoWaterFor of ecoWaterForList">{{ecoWaterFor.item}}</ion-option>
+						</ion-select>
+					</ion-item>
+					<ion-item>
+						<ion-label>ECO Water Every</ion-label>
+						<ion-select [(ngModel)]="ecoPauseSelected">
+							<ion-option *ngFor="let ecoPause of ecoPauseList">{{ecoPause.item}}</ion-option>
+						</ion-select>
+					</ion-item>
+				</div>
+				<ion-item>
+					<ion-label>Program</ion-label>
+					<ion-toggle [(ngModel)]="isEnable" checked="false"></ion-toggle>
+				</ion-item>
+				<div *ngIf="sensorFunction">
+					<ion-item>
+						<ion-row>
+							<ion-col class="nopadding" width-33>
+								<ion-label>Moist</ion-label>
+							</ion-col>
+							<ion-col width-67>
+								<ion-row>
+									<ion-col width-20>
+										<img src="{{sensorMoistList[0].img}}" style="width : 100% ; height : 100%" (click)="mostBtnClicked(0)">
+									</ion-col>
+									<ion-col width-20>
+										<img src="{{sensorMoistList[1].img}}" style="width : 100% ; height : 100%" (click)="mostBtnClicked(1)">
+									</ion-col>
+									<ion-col width-20>
+										<img src="{{sensorMoistList[2].img}}" style="width : 100% ; height : 100%" (click)="mostBtnClicked(2)">
+									</ion-col>
+									<ion-col width-20>
+										<img src="{{sensorMoistList[3].img}}" style="width : 100% ; height : 100%" (click)="mostBtnClicked(3)">
+									</ion-col>
+									<ion-col width-20>
+										<img src="{{sensorMoistList[4].img}}" style="width : 100% ; height : 100%" (click)="mostBtnClicked(4)">
+									</ion-col>
+								</ion-row>
+							</ion-col>
+						</ion-row>
+					</ion-item>
+
+					<!--<ion-item>
+						<ion-label>Moist Sensor</ion-label>
+						<ion-range min="1" max="5" step="1" snaps="true" pin="true" [(ngModel)]="moistSelected" color="primary">
+							<ion-icon range-left small color="primary" name="ios-water"></ion-icon>
+							<ion-icon range-right color="primary" name="ios-water"></ion-icon>
+						</ion-range>
+					</ion-item>-->
+
+				</div>
+				<button ion-button color="secondary" full (click)="saveClicked()">
+					<ion-icon name="md-checkmark"></ion-icon></button>
+			</ion-list>
+		</div>
+
+
+		<div *ngSwitchCase="'weekly'">
+			<div *ngIf="ecoFunction">
+				<ion-row start>
+					<ion-buttons [hidden]="hideMainDeleteBtn">
+						<button ion-button outline icon-left color="danger" style="font-weight: bold;" (click)="showDeleteClicked()">
+						<ion-icon name="trash"></ion-icon>
+						Delete
+						</button>
+					</ion-buttons>
+					<ion-title text-center>Schedule</ion-title>
+					<ion-buttons end>
+						<button ion-button outline icon-left style="font-weight: bold;" (click)="goToProgramDetailClick()">
+						<ion-icon name="add"></ion-icon>
+						Add
+						</button>
+					</ion-buttons>
+				</ion-row>
+			</div>
+
+			<ion-list>
+				<ion-item *ngFor="let weeklyData of weeklyDataList">
+					<ion-row>
+						<ion-col width-67 (click)="editWeeklyClicked(weeklyData)">
+							<div *ngIf="weeklyData.isEnable">
+								<ion-row>
+									<ion-col width-10>
+										<h1 color="black">{{weeklyData.cycleId}}</h1>
+									</ion-col>
+									<ion-col width-90>
+										<p color="primary" style="font-weight: bold;">{{weeklyData.waterDay}}</p>
+										<h1 color="black" style="font-weight: bold;">{{weeklyData.startTime}}</h1>
+										<p color="primary" style="font-weight: bold;">Water For : {{weeklyData.waterFor}}</p>
+									</ion-col>
+								</ion-row>
+							</div>
+							<div *ngIf="!weeklyData.isEnable">
+								<ion-row>
+									<ion-col width-10>
+										<h1 color="lightgray">{{weeklyData.cycleId}}</h1>
+									</ion-col>
+									<ion-col width-90>
+										<p color="lightgray" style="font-weight: bold;">{{weeklyData.waterDay}}</p>
+										<h1 color="lightgray" style="font-weight: bold;">{{weeklyData.startTime}}</h1>
+										<p color="lightgray" style="font-weight: bold;">Water For : {{weeklyData.waterFor}}</p>
+									</ion-col>
+								</ion-row>
+							</div>
+						</ion-col>
+						<ion-col width-33>
+							<div *ngIf="!hideMinorDeleteBtn">
+								<!--<div [hidden]="hideMinorDeleteBtn">-->
+								<ion-item no-lines style="margin-top: 3px;margin-left: 25px">
+									<button ion-button color="danger" clear icon-only (click)="deleteWeeklyClicked(weeklyData)">
+										<ion-icon name="trash" is-active="true"></ion-icon>
+									</button>
+								</ion-item>
+							</div>
+							<div *ngIf="hideMinorDeleteBtn">
+								<!--<div [hidden]="!hideMinorDeleteBtn">-->
+								<ion-item no-lines style="margin-top: 11px;">
+									<ion-toggle [(ngModel)]="weeklyData.isEnable" (click)="updateWeeklyIsEnable(weeklyData)"></ion-toggle>
+								</ion-item>
+							</div>
+						</ion-col>
+					</ion-row>
+				</ion-item>
+			</ion-list>
+
+		</div>
+	</div>
+</ion-content>

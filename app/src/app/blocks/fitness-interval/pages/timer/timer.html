@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button (click)="viewWorkouts()" ion-button>
+        Workouts
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div [hidden]="working" class="timer">
+    <h1 class="timer__title">{{ workout?.name }}</h1>
+    <ion-fab class="timer__button">
+      <button (click)="startWorkout()" color="primary" ion-fab>
+        <ion-icon name="play"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+  <div class="fill" [hidden]="!working">
+    <ion-grid class="fill flex space-around">
+      <ion-row>
+        <ion-col>
+          <h1 class="timer__title" text-center>{{ workoutCountdown }}</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <svg id="svg" viewBox="0,0,100,100"></svg>
+        </ion-col>
+      </ion-row>
+      <ion-row margin-bottom padding-bottom>
+        <ion-col>
+          <ion-fab middle center>
+            <button (click)="stopWorkout()" color="primary" clear icon-only ion-fab>
+              <ion-icon name="square"></ion-icon>
+            </button>
+          </ion-fab>
+        </ion-col>
+        <ion-col>
+          <ion-fab middle center>
+            <button *ngIf="!timerPaused" (click)="pauseWorkout()" color="primary" clear icon-only ion-fab>
+              <ion-icon name="pause"></ion-icon>
+            </button>
+            <button *ngIf="timerPaused" (click)="resumeWorkout()" color="primary" clear icon-only ion-fab>
+              <ion-icon name="play"></ion-icon>
+            </button>
+          </ion-fab>
+        </ion-col>
+        <ion-col>
+          <ion-fab middle center>
+            <button (click)="skipInterval()" color="primary" clear icon-only ion-fab>
+              <ion-icon name="skip-forward"></ion-icon>
+            </button>
+          </ion-fab>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

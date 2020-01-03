@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 105.83333 105.83333">
+  <title
+     id="title5240">Fitness timer</title>
+  <defs
+     id="defs2">
+    <filter
+       height="1.024"
+       y="-0.012"
+       width="1.024"
+       x="-0.012"
+       id="filter5200"
+       style="color-interpolation-filters:sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5202"
+         stdDeviation="0.47146343" />
+    </filter>
+    <filter
+       height="1.024"
+       y="-0.012"
+       width="1.024"
+       x="-0.012"
+       id="filter5208"
+       style="color-interpolation-filters:sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur5210"
+         stdDeviation="0.3933247" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Fitness timer</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-191.16667)"
+     id="layer1">
+    <flowRoot
+       transform="matrix(0.26458333,0,0,0.26458333,-104.28589,703.65455)"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot4837"
+       xml:space="preserve"><flowRegion
+         id="flowRegion4839"><rect
+           y="-1271.4803"
+           x="-105"
+           height="309"
+           width="490"
+           id="rect4841" /></flowRegion><flowPara
+         id="flowPara4843" /></flowRoot>    <circle
+       transform="matrix(1.0960856,0,0,1.0960856,-114.46154,637.70901)"
+       r="47.146343"
+       cy="-358.7626"
+       cx="152.95396"
+       id="path4908"
+       style="opacity:1;fill:#c6e9af;fill-opacity:1;stroke:#45dc5f;stroke-width:0.66145831;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.39215686;filter:url(#filter5200)" />
+    <circle
+       transform="matrix(1.0960856,0,0,1.0960856,-114.46154,637.70901)"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#45dc5f;stroke-width:0.66145831;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.39215686;filter:url(#filter5208)"
+       id="circle4910"
+       cx="152.95396"
+       cy="-358.7626"
+       r="39.33247" />
+    <text
+       id="timerText"
+       y="250.3237"
+       x="22.70071"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.4669857px;line-height:1.25;font-family:'Microsoft JhengHei';-inkscape-font-specification:'Microsoft JhengHei, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#45dc5f;fill-opacity:1;stroke:none;stroke-width:0.29000598"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.4669857px;font-family:'Microsoft JhengHei';-inkscape-font-specification:'Microsoft JhengHei, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#45dc5f;fill-opacity:1;stroke-width:0.29000598"
+         y="250.3237"
+         x="22.70071"
+         id="tspan4833">00:00:00</tspan></text>
+    <path
+       d=""
+       cx="152.95396"
+       cy="-358.7626"
+       r="39.33247"
+       id="circle5228"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#45dc5f;stroke-width:0.66145831;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.39215686;filter:url(#filter5208)" />
+    <circle
+       r="0"
+       cy="340.25314"
+       cx="53.306885"
+       id="circle5230"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#45dc5f;stroke-width:2.32004786;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="timerProgress"
+       d="m 53.187995,201.12051 c 23.957103,0 43.355074,19.39798 43.355074,43.35507 0,23.95711 -19.397971,43.35288 -43.355074,43.35288 -23.957089,0 -43.3528638,-19.39577 -43.3528638,-43.35288 0,-23.95709 19.3957748,-43.35507 43.3528638,-43.35507 z"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#45dc5f;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <ellipse
+       ry="3.1713755"
+       rx="3.1713753"
+       cy="201.23643"
+       cx="53.189098"
+       id="timerProgressIndicator"
+       style="fill:#e3f4d7;fill-opacity:1;stroke:#45dc5f;stroke-width:0.27183217;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.39215686" />
+  </g>
+</svg>

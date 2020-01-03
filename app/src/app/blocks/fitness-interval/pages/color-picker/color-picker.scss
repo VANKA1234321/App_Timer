@@ -1,0 +1,22 @@
+.modal--small {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, .4);
+  ion-row {
+    background-color: #000000;
+    margin: 1rem;
+    padding: 1rem 2rem;
+  }
+}
+
+
+@media screen and (min-width: 766px) and (min-height: 599px) {
+  .modal--small {
+    background: none;
+    ion-row {
+      max-width: 40rem;
+      padding: 1rem 6rem;
+    }
+  }
+}

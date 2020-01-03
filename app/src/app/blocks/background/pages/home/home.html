@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  The world is your oyster.
+  <p>
+    If you get lost, the
+    <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+  </p>
+
+  <div *ngIf="isStart == false && isResume == false">
+    <button ion-button (click)="startTimer()" block>Start</button>
+  </div>
+  <div *ngIf="isStart == true && isResume == false">
+    <button ion-button (click)="stopTimer()" block>Stop</button>
+  </div>
+  <div *ngIf="isStart == true && isResume == true">
+    <button ion-button block (click)="resumeTimer()">Start</button>
+  </div>
+
+  <button ion-button (click)="goP2()"></button>
+  <h1>{{output}}</h1>
+
+
+</ion-content>

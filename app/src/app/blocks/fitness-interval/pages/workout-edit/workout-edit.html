@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button (click)="saveWorkout()" [disabled]="!unsavedChanges || !workout.intervals.length" icon-only ion-button padding-right>
+        <ion-icon name="done-all"></ion-icon>
+      </button>
+      <button (click)="removeWorkout()" [disabled]="!workout['$key']" icon-only ion-button padding-right>
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <form [formGroup]="workoutForm" class="header-form">
+    <ion-grid>
+      <ion-row align-items-center justify-content-center>
+        <ion-col>
+          <ion-item class="auth-form__item">
+            <ion-label floating text-wrap>Workout name *</ion-label>
+            <ion-input formControlName="name" required type="text"></ion-input>
+          </ion-item>
+          <div class="form__message--light" *ngIf="workoutForm.invalid && workoutForm.controls.name?.touched && workoutForm.controls.name.errors?.required">
+            <ion-icon name="warning"></ion-icon> Please enter the workout name.</div>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center justify-content-between>
+        <ion-col>
+          <ion-item class="auth-form__item">
+            <ion-label floating>Warm up</ion-label>
+            <ion-datetime displayFormat="HH:mm:ss" formControlName="warmUp" pickerFormat="HH mm ss"></ion-datetime>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item class="auth-form__item">
+            <ion-label floating>Cooldown</ion-label>
+            <ion-datetime displayFormat="HH:mm:ss" formControlName="coolDown" pickerFormat="HH mm ss"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center justify-content-center>
+        <ion-col>
+          <ion-item class="auth-form__item">
+            <ion-label>Rounds: {{ workout.rounds }}</ion-label>
+            <ion-range color="light" max="50" min="1" formControlName="rounds" snaps="false" step="1">
+              <span range-left>1</span>
+              <span range-right>50</span>
+            </ion-range>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let interval of workout.intervals; let i = index">
+      <button (click)="editInterval(i)" ion-item>
+        <ion-icon [style.color]="interval.color" item-start [name]="interval.icon"></ion-icon>
+        <h2>{{ interval.name }}</h2>
+        <p>{{ interval.duration }}</p>
+        <ion-note item-right>
+          Slide left
+        </ion-note>
+      </button>
+      <ion-item-options side="right">
+        <button (click)="removeInterval(i)" clear icon-only ion-button>
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab bottom right>
+    <button (click)="addInterval()" color="primary" ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

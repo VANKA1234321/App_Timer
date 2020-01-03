@@ -1,0 +1,14 @@
+page-valves {
+	.thumbnail {
+		min-width: 180px;
+		min-height: 120px;
+		img {
+			max-width: 180px;
+			min-width: 120px;
+		}
+	}
+
+	.no-padding {
+		padding: 0px !important;
+	}
+}

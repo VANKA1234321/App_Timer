@@ -1,0 +1,43 @@
+<ion-content class="interval-page" [style.backgroundColor]="interval.color">
+  <form [formGroup]="intervalForm">
+    <ion-grid>
+      <ion-row align-items-center justify-content-center>
+        <ion-col>
+          <ion-item>
+            <ion-label floating text-wrap>Interval name *</ion-label>
+            <ion-input formControlName="name" required type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center justify-content-center>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>Duration</ion-label>
+            <ion-datetime displayFormat="HH:mm:ss" formControlName="duration" pickerFormat="HH mm ss"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center justify-content-center>
+        <ion-col class="flex row center middle">
+          <button clear (click)="pickIcon()" icon-only ion-button>
+            <ion-icon class="font--large" [name]="interval.icon"></ion-icon>
+          </button>
+          <div class="vertical-divider vertical-divider--light" margin></div>
+          <button clear (click)="pickColor()" icon-only ion-button>
+            <ion-icon class="font--large" md-name="palette"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center justify-content-center>
+        <ion-col class="flex row center middle">
+          <button color="light" class="button--rounded" (click)="cancel()" round outline icon-only ion-button margin>
+            <ion-icon name="close"></ion-icon>
+          </button>
+          <button color="light" class="button--rounded" (click)="done()" [disabled]="intervalForm.invalid" round outline icon-only ion-button margin>
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,0 +1,9 @@
+<ion-grid class="modal--small flex row center middle">
+    <ion-row align-items-center justify-content-center padding margin>
+      <ion-col align-self-center *ngFor="let icon of icons">
+        <button (click)="selectIcon(icon)" class="button--rounded" [style.backgroundColor]="color" icon-only round ion-button>
+          <ion-icon color="light" [name]="icon"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>

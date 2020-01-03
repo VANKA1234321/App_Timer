@@ -1,0 +1,9 @@
+{
+	"editor.formatOnSave": true,
+	"files.exclude": {
+		"app/node_modules": true,
+		"app/e2e": true,
+		"app/karma.conf.js": true,
+		"app/browserslist": true
+	}
+}

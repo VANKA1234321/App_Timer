@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>{{timerModel}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-image: url('assets/img/backgroundimage.jpg');background-size: cover;">
+	<ion-card *ngFor="let zone of zoneList">
+		<img src="{{ zone.Image }}" (click)="takePicture(zone)" class="thumbnail" />
+		<ion-card-content (click)="goToTabs(zone.id)">
+			<!--<ion-card-title>
+			ZONE {{zone.id}}
+		</ion-card-title>-->
+			<p>ZONE {{zone.id}}</p>
+			<ion-row>
+				<ion-col>
+					<button ion-button icon-left clear small>
+						<ion-icon name="md-sync"></ion-icon>
+						<h2>01:00 PM</h2>
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
+	</ion-card>
+	<!--<ion-list class="no-padding">
+	<ion-item *ngFor="let zone of zoneList">
+		<ion-row>
+			<ion-col col-75 class="no-padding">
+				<img src="{{ zone.Image }}" (click)="takePicture(zone)" class="thumbnail"/>
+			</ion-col>
+			<ion-col col-25 (click)="goToTabs(zone.id)" class="no-padding">
+				<div style="height: 100%; text-align: center;">
+<h2>ZONE {{zone.id}}</h2>
+</div>
+</ion-col>
+</ion-row>
+</ion-item>
+</ion-list>-->
+	<ion-fab right bottom>
+		<button ion-fab color="primary">
+			<ion-icon name="md-rainy"></ion-icon>
+		</button>
+	</ion-fab>
+</ion-content>

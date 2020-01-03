@@ -1,0 +1,8 @@
+<ion-grid class="modal--small flex row center middle">
+  <ion-row align-items-center justify-content-center>
+    <ion-col align-self-center col-lg-3 *ngFor="let color of colors">
+      <button [style.backgroundColor]="color" (click)="selectColor(color)" class="button--rounded" round ion-button>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

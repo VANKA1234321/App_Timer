@@ -1,0 +1,63 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>{{timerId}},Zone{{zoneId}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content text-center style="background-image: url('assets/img/backgroundimage.jpg');background-size: cover;">
+	<br><br><br>
+	<ion-item>
+		<ion-label>Water For</ion-label>
+		<ion-select [(ngModel)]="waterForSelected" [disabled]="started" (ionChange)="selectedChanged()">
+			<ion-option *ngFor="let waterFor of waterForList">{{waterFor.item}}</ion-option>
+		</ion-select>
+	</ion-item>
+	<br><br>
+	<div>
+		<img src="{{imgSrc}}" style="width : 40% ; height : 40%">
+		<h1>{{showTime}}</h1>
+	</div>
+	<ion-row>
+		<ion-col width-50>
+			<button ion-button full icon-only *ngIf="!stoped" (click)="pauseClicked()" color="danger"
+				[disabled]="!isWatering">
+				<ion-icon name="md-pause"></ion-icon>
+			</button>
+			<button ion-button full icon-only *ngIf="stoped" (click)="resetClicked()">
+				<ion-icon name="md-refresh"></ion-icon>
+			</button>
+		</ion-col>
+		<ion-col width-50>
+			<button ion-button full icon-only *ngIf="!started" (click)="startClicked()">
+				<ion-icon name="md-play"></ion-icon>
+			</button>
+			<button ion-button full icon-only *ngIf="started" (click)="resumeClicked()" color="secondary"
+				[disabled]="isWatering">
+				<ion-icon name="md-play"></ion-icon>
+			</button>
+		</ion-col>
+	</ion-row>
+	<!--<h1> Water For</h1>
+	<div text-center>
+		<ion-card>
+			<ion-row style="height:130px;">
+				<ion-col>
+					<ion-slides #mySlider1 [options]="mySlideOptions1" (ionDidChange)="onSlideChanged()">
+						<ion-slide *ngFor="let sliderMin of sliderMins">
+							<h1 class="swiperFont">{{sliderMin.item}}</h1>
+						</ion-slide>
+					</ion-slides>
+				</ion-col>
+			</ion-row>
+		</ion-card>
+	</div>
+	<h1>Mins</h1>
+	<ion-row>
+		<ion-col col-50>
+			<button ion-button color="danger" full (click)="stopClicked()" [hidden]="!isWatering">STOP</button>
+		</ion-col>
+		<ion-col col-50>
+			<button ion-button color="secondary" full (click)="startClicked()">START</button>
+		</ion-col>
+	</ion-row>-->
+</ion-content>

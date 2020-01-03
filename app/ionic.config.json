@@ -1,0 +1,7 @@
+{
+  "name": "app-timer",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
